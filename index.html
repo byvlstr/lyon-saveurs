@@ -735,17 +735,17 @@ function initMap() {
   });
 
   // World view: subtle background + labels
-  worldTileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-    attribution:'© <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors © <a href="https://carto.com/">CARTO</a>',
+  worldTileLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png?api_key=9f817a2b-379a-4283-92dd-d724e9613e74', {
+    attribution:'© <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors © <a href="https://stadiamaps.com/">Stadia Maps</a>',
     subdomains:'abcd', maxZoom:19, opacity:0.35,
   });
-  labelTileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
+  labelTileLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_labels/{z}/{x}/{y}{r}.png?api_key=9f817a2b-379a-4283-92dd-d724e9613e74', {
     subdomains:'abcd', maxZoom:19,
   });
 
   // Lyon view: full Positron tiles
-  lyonTileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution:'© <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors © <a href="https://carto.com/">CARTO</a>',
+  lyonTileLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png?api_key=9f817a2b-379a-4283-92dd-d724e9613e74', {
+    attribution:'© <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors © <a href="https://stadiamaps.com/">Stadia Maps</a>',
     subdomains:'abcd', maxZoom:19,
   });
 
