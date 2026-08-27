@@ -735,12 +735,9 @@ function initMap() {
   });
 
   // World view: subtle background + labels
-  worldTileLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png?api_key=9f817a2b-379a-4283-92dd-d724e9613e74', {
+  worldTileLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png?api_key=9f817a2b-379a-4283-92dd-d724e9613e74', {
     attribution:'© <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors © <a href="https://stadiamaps.com/">Stadia Maps</a>',
     subdomains:'abcd', maxZoom:19, opacity:0.35,
-  });
-  labelTileLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_labels/{z}/{x}/{y}{r}.png?api_key=9f817a2b-379a-4283-92dd-d724e9613e74', {
-    subdomains:'abcd', maxZoom:19,
   });
 
   // Lyon view: full Positron tiles
@@ -750,7 +747,6 @@ function initMap() {
   });
 
   worldTileLayer.addTo(map);
-  labelTileLayer.addTo(map);
 
   markersLayer = L.layerGroup().addTo(map);
 
@@ -761,7 +757,6 @@ function switchToLyonView() {
   if (lyonMode) return;
   lyonMode = true;
   map.removeLayer(worldTileLayer);
-  map.removeLayer(labelTileLayer);
   if (worldLayer) map.removeLayer(worldLayer);
   lyonTileLayer.addTo(map);
 }
@@ -772,7 +767,6 @@ function switchToWorldView() {
   if (map.hasLayer(lyonTileLayer)) map.removeLayer(lyonTileLayer);
   // Show world layers — never rebuild, just show
   if (!map.hasLayer(worldTileLayer)) worldTileLayer.addTo(map);
-  if (!map.hasLayer(labelTileLayer)) labelTileLayer.addTo(map);
   if (worldLayer && !map.hasLayer(worldLayer)) worldLayer.addTo(map);
 }
 
